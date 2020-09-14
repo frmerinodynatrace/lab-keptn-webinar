@@ -14,6 +14,6 @@ spec:
   - route:
     - destination:
         host: carts-canary.webinar-keptn-production.svc.cluster.local
+      weight: 100
     - destination:
         host: carts-primary.webinar-keptn-production.svc.cluster.local
-      weight: 100
