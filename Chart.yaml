@@ -1,0 +1,4 @@
+apiVersion: v2
+description: A Helm Chart for project webinar-keptn-umbrella
+name: webinar-keptn-umbrella
+version: 0.1.0
