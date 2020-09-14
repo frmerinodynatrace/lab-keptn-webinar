@@ -1,0 +1,19 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  creationTimestamp: null
+  name: carts
+spec:
+  gateways:
+  - public-gateway.istio-system
+  - mesh
+  hosts:
+  - carts.webinar-keptn-production.35.223.156.234.nip.io
+  - carts
+  http:
+  - route:
+    - destination:
+        host: carts-canary.webinar-keptn-production.svc.cluster.local
+    - destination:
+        host: carts-primary.webinar-keptn-production.svc.cluster.local
+      weight: 100
