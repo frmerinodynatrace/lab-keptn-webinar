@@ -1,0 +1,16 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  creationTimestamp: null
+  name: carts-db
+spec:
+  gateways:
+  - public-gateway.istio-system
+  - mesh
+  hosts:
+  - carts-db.webinar-keptn-dev.35.223.156.234.nip.io
+  - carts-db
+  http:
+  - route:
+    - destination:
+        host: carts-db.webinar-keptn-dev.svc.cluster.local
